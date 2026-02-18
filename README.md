@@ -1,10 +1,36 @@
-# LoanProcessing Crew
+# Loan Processing multi agent Crew application 
 
 Welcome to the LoanProcessing Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
 ## Installation
 
 Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+
+VSCode - https://code.visualstudio.com/download
+
+Install Python --- https://www.python.org/downloads/
+
+## CrewAI Installation: 
+
+Run following commands 
+
+python -m .venv ( to create virtual environment)
+
+source .venv/bin/activate ( to activate virtual environment)
+
+pip install uv       (Python package installer)
+
+uv --version       (to check version)
+
+uv tool install crewai (install the crewai )
+
+uv tool update-shell   (to set path)
+
+## Create Project
+
+crewai create crew loan_processing ( to create skelaton project loan_processing)
+
+This will create project in structure as shown below
 
 First, if you haven't already, install uv:
 
@@ -18,6 +44,9 @@ Next, navigate to your project directory and install the dependencies:
 ```bash
 crewai install
 ```
+## install Dependencies
+pip install -r requirements.txt
+
 ### Customizing
 
 **Add your `OPENAI_API_KEY` into the `.env` file**
