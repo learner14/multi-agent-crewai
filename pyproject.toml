@@ -1,0 +1,24 @@
+[project]
+name = "loan_processing"
+version = "0.1.0"
+description = "loan-processing using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.7.2"
+]
+
+[project.scripts]
+loan_processing = "loan_processing.main:run"
+run_crew = "loan_processing.main:run"
+train = "loan_processing.main:train"
+replay = "loan_processing.main:replay"
+test = "loan_processing.main:test"
+run_with_trigger = "loan_processing.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
