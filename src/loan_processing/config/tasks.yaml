@@ -1,0 +1,48 @@
+task_validate:
+  description: >
+    Validate the loan application provided as a JSON string: '{document_content}'.
+    Pass this string to the 'Validate Document Fields' tool.
+  expected_output: >
+    A JSON string with the validation status
+  agent: doc_specialist
+
+task_credit:
+  description: >
+    Extract customer_id and call Query Credit Bureau API.
+  expected_output: >
+    A JSON string containing the credit_score.
+  agent: credit_analyst
+  context:
+    - task_validate
+
+task_risk:
+  description: >
+    Extract loan details and credit score, then Calculate Risk Score..
+  expected_output: >
+    A JSON string containing the risk_score.
+  agent: risk_assessor
+  context:
+    - task_validate
+    - task_credit
+
+task_compliance:
+  description: >
+    Check Lending Compliance based on history and risk score.
+  expected_output: >
+    Compliance status JSON.
+  agent: compliance_officer
+  context:
+    - task_validate
+    - task_risk
+
+task_report:
+  description: >
+    Compile a final report with Approve/Deny decision.
+  expected_output: >
+    Markdown report.
+  agent: manager
+  context:
+    - task_validate
+    - task_credit
+    - task_risk
+    - task_compliance

@@ -1,0 +1,8 @@
+bedrock-agentcore==0.1.4
+boto3
+crewai[tools]
+crewai-tools[mcp]
+streamlit==1.49.1
+aws-opentelemetry-distro>=0.10.0
+ratelimit
+tenacity
